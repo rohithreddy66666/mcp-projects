@@ -10,7 +10,7 @@ A Chainlit-powered chatbot that provides both weather information and web search
 - **Debug Mode**: View the assistant's reasoning process (optional)
 
 ## Demo
-![Multi-Function Assistant Demo](demo.png)
+![Multi-Function Assistant Demo](intro-weather-and-google-api-with-mcp/demo.png)
 
 
 ## Installation
