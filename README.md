@@ -32,32 +32,22 @@ Edit
 git clone <your-repo-url>
 cd mcp-projects
 2️⃣ Create the project folder & move files (if needed)
-bash
-Copy
-Edit
+
 mkdir intro-weather-and-google-api-with-mcp
 mv app.py requirements.txt intro-weather-and-google-api-with-mcp/
 cd intro-weather-and-google-api-with-mcp
 3️⃣ Install dependencies
-bash
-Copy
-Edit
+
 pip install -r requirements.txt
 4️⃣ Create a .env file
 Add your API keys inside .env:
-
-ini
-Copy
-Edit
 OPENAI_API_KEY=your_openai_key
 WEATHER_API_KEY=your_weatherapi_key
 RAPID_API_KEY=your_rapidapi_key
 Never commit your .env file – it's already ignored via .gitignore.
 
 ▶️ Run the App
-bash
-Copy
-Edit
+
 chainlit run app.py
 Then, open the URL provided (typically http://localhost:8000) in your browser.
 
@@ -86,9 +76,6 @@ Memory persistence per session
 Each message is evaluated and contextualized before being sent to the model, ensuring consistent and transparent decision-making.
 
 📦 Requirements (from requirements.txt)
-nginx
-Copy
-Edit
 chainlit
 requests
 python-dotenv
@@ -116,10 +103,4 @@ MIT License – feel free to use, modify, and distribute.
 
 Designed with ❤️ using Chainlit + OpenAI + MCP Protocol.
 
-yaml
-Copy
-Edit
-
 ---
-
-Just open a text editor in VS Code or any IDE, create a new file named `README.md`, and paste th
