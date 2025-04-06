@@ -1,106 +1,98 @@
-# 🌦️ Intro Weather & Google Search Assistant using MCP
+# Multi-Function Assistant
 
-A multi-functional AI assistant built with **Chainlit**, leveraging **OpenAI's GPT models**, **WeatherAPI**, and **Google Search API via RapidAPI**. This assistant follows the **Model Context Protocol (MCP)** approach for structured and explainable AI interactions.
+A Chainlit-powered chatbot that provides both weather information and web search capabilities in a single, intuitive interface.
 
----
+## Features
 
-## 🚀 Features
+- **Weather Information**: Get current weather conditions or forecasts for any location
+- **Web Search**: Find information on any topic using Google Search integration
+- **Combined Queries**: Ask for both weather and search results in a single question
+- **Debug Mode**: View the assistant's reasoning process (optional)
 
-- ✅ Real-time **current weather** and **3-day forecast** using [WeatherAPI](https://www.weatherapi.com/)
-- 🔍 Web **search queries** using [Google Search API](https://rapidapi.com/)
-- 🧠 Built on **Model Context Protocol (MCP)** principles by Anthropic
-- 🔐 Secure configuration using environment variables (`.env`)
-- 📊 Reasoning process and tool decisions displayed in **debug mode**
-- 🧩 Modular & extensible Chainlit application
+## Demo
 
----
+![Multi-Function Assistant Demo](https://example.com/demo.gif)
 
-## 📁 Project Structure
+## Installation
 
-intro-weather-and-google-api-with-mcp/ ├── app.py # Main Chainlit application ├── requirements.txt # Python dependencies └── README.md # You're reading it!
+### Prerequisites
 
-yaml
-Copy
-Edit
+- Python 3.8+
+- API keys for:
+  - OpenAI
+  - WeatherAPI.com
+  - RapidAPI (Google Search)
 
----
+### Setup
 
-## 🔧 Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/multi-function-assistant.git
+   cd multi-function-assistant
+   ```
 
-### 1️⃣ Clone the repo (if not done yet)
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Create a `.env` file in the project root with your API keys:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   WEATHER_API_KEY=your_weatherapi_key
+   RAPID_API_KEY=your_rapidapi_key
+   ```
+
+## Usage
+
+Run the application with:
+
 ```bash
-git clone <your-repo-url>
-cd mcp-projects
-2️⃣ Create the project folder & move files (if needed)
-
-mkdir intro-weather-and-google-api-with-mcp
-mv app.py requirements.txt intro-weather-and-google-api-with-mcp/
-cd intro-weather-and-google-api-with-mcp
-3️⃣ Install dependencies
-
-pip install -r requirements.txt
-4️⃣ Create a .env file
-Add your API keys inside .env:
-OPENAI_API_KEY=your_openai_key
-WEATHER_API_KEY=your_weatherapi_key
-RAPID_API_KEY=your_rapidapi_key
-Never commit your .env file – it's already ignored via .gitignore.
-
-▶️ Run the App
-
 chainlit run app.py
-Then, open the URL provided (typically http://localhost:8000) in your browser.
+```
 
-💡 Example Prompts
-What's the weather in New York?
+Then open your browser and navigate to `http://localhost:8000` to interact with the assistant.
 
-Forecast in Tokyo for the next few days
+### Example Queries
 
-Search for Rohith Reddy Vangala
+- "What's the weather in Tokyo?"
+- "Search for artificial intelligence news"
+- "Tell me about the forecast in Paris and lookup tourist attractions there"
 
-Tell me about AMD MI300 and check the weather in Paris
+## Architecture
 
-🧠 What is MCP (Model Context Protocol)?
-This assistant is structured around Anthropic's Model Context Protocol (MCP) – a systematic approach to multi-function LLM agents. It includes:
+The application follows a Model Context Protocol (MCP) architecture:
 
-Intent detection (weather vs. search)
+1. **Input Analysis**: Parses user queries to identify intent (weather, search, or both)
+2. **Tool Execution**: Calls the appropriate external APIs based on the identified intent
+3. **Context Building**: Combines the original query with API responses
+4. **Response Generation**: Uses OpenAI's GPT model to generate natural language responses
+5. **Context Management**: Maintains conversation history for continuity
 
-Tool execution planning
+## Configuration
 
-Reasoning trace (debug mode)
+You can modify the following variables in `app.py`:
 
-Structured context construction
+- `DEBUG_MODE`: Set to `True` to view the assistant's reasoning process, `False` to hide it
+- Weather and Search API endpoints and parameters
 
-Memory persistence per session
+## Dependencies
 
-Each message is evaluated and contextualized before being sent to the model, ensuring consistent and transparent decision-making.
+- `chainlit`: For the chat interface
+- `openai`: For natural language processing
+- `requests`: For API calls
+- `python-dotenv`: For environment variable management
 
-📦 Requirements (from requirements.txt)
-chainlit
-requests
-python-dotenv
-openai
-Add any other dependencies you need here.
+## License
 
-📚 References
-Chainlit Documentation: https://docs.chainlit.io/
+[MIT License](LICENSE)
 
-WeatherAPI: https://www.weatherapi.com/
+## Contributing
 
-Google Search API on RapidAPI: https://rapidapi.com/
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-OpenAI API: https://platform.openai.com/
-
-Model Context Protocol by Anthropic: https://www.anthropic.com/index/model-context-protocol
-
-👨‍💻 Author
-Rohith Reddy Vangala
-Passionate about NLP, GenAI, and multi-modal assistants
-Feel free to connect on LinkedIn
-
-📜 License
-MIT License – feel free to use, modify, and distribute.
-
-Designed with ❤️ using Chainlit + OpenAI + MCP Protocol.
-
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
