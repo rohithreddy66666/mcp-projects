@@ -11,7 +11,7 @@ A Chainlit-powered chatbot that provides both weather information and web search
 
 ## Demo
 
-![Multi-Function Assistant Demo](https://example.com/demo.gif)
+
 
 ## Installation
 
